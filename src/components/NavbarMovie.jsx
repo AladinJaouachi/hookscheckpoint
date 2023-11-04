@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Css/NavbarMovie.css";
 import Container from "react-bootstrap/Container";
 
 import Nav from "react-bootstrap/Nav";
@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import AddMovie from "./AddMovie";
 import { Link } from "react-router-dom";
 import CompFilter from "./CompFilter";
-import "../Css/NavbarMovie.css";
+
 
 
 function NavbarMovie({setSearchTitleFilm , setsearchRateFilm,  AddMovieFunc}) {
