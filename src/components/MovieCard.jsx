@@ -1,11 +1,13 @@
 
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ film }) => {
  
   return (
     <>
+    <Link to={`/${film.id}`}>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={film.stream_img} />
         <Card.Body>
@@ -17,6 +19,7 @@ const MovieCard = ({ film }) => {
 
         </Card.Body>
       </Card>
+      </Link>
     </>
   );
 };

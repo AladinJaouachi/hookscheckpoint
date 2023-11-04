@@ -1,14 +1,18 @@
 import React from "react";
 
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import AddMovie from "./AddMovie";
+import { Link } from "react-router-dom";
+import CompFilter from "./CompFilter";
+import "../Css/NavbarMovie.css";
 
 
-function NavbarMovie({setSearchTitleFilm}) {
+function NavbarMovie({setSearchTitleFilm , setsearchRateFilm,  AddMovieFunc}) {
   return (
-    <>
+    <div className="father">
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
           <Navbar.Brand href="#">Movie App</Navbar.Brand>
@@ -19,23 +23,17 @@ function NavbarMovie({setSearchTitleFilm}) {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href="#action1"><Link to="/">Home</Link></Nav.Link>
               <Nav.Link href="#action2">About</Nav.Link>
               <Nav.Link href="#action3">Link</Nav.Link>
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="recherche"
-                aria-label="Search"
-                onChange={(event)=>setSearchTitleFilm(event.target.value) }
-              />
-            </Form>
+            
           </Navbar.Collapse>
         </Container>
+        <CompFilter setSearchTitleFilm={setSearchTitleFilm} setsearchRateFilm={setsearchRateFilm}  />
+        <AddMovie AddMovieFunc={AddMovieFunc}/>
       </Navbar>
-    </>
+    </div>
   );
 }
 

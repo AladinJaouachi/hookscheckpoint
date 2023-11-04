@@ -10,7 +10,7 @@ function AddMovie({AddMovieFunc}) {
   const handleShow = () => setShow(true);
 
   const [newMovie, setNewMovie] = useState({
-    index: Math.random(),
+    id: Math.random(),
     stream_name:"",
     descrip:"",
     rate:0 ,
@@ -19,15 +19,12 @@ function AddMovie({AddMovieFunc}) {
 
   }
   )
-  console.log(newMovie)
-
-
 
 
   return (
     <>
       <Button className='AddMovie' variant="primary" onClick={handleShow}>
-       ADD +
+       ADD film +
       </Button>
 
       <Modal show={show} onHide={handleClose}>

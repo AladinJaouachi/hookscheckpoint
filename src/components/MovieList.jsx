@@ -1,20 +1,19 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-
-const MovieList = ({ Data , searchTitleFilm }) => {
- 
-
+const MovieList = ({ Data, searchTitleFilm, searchRateFilm }) => {
   return (
     <div className="Father">
-      {Data.map((film, index) => 
-        film.stream_name.toLowerCase().includes(searchTitleFilm) && (
-        <MovieCard key={index} film={film} />
-        )
-       
-      )}
+      {Data.filter((film) => {
+        return (
+          film.stream_name.toLowerCase().includes(searchTitleFilm) &&
+          (!searchRateFilm || film.rate >= searchRateFilm)
+        );
+      }).map((filterfilm) => (
+        <MovieCard key={filterfilm.id} film={filterfilm} />
+      ))}
     </div>
-  ); 
+  );
 };
 
 export default MovieList;
